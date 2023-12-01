@@ -5,5 +5,5 @@ repositories:
     version: noetic-devel
   src/remo_description:
     type: git
-    url: https://github.com/ros-mobile-robots/remo_description
+    url: git@github.com:bgill92/remo_description.git
     version: main
