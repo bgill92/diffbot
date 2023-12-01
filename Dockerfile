@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
-ARG ROS_DISTRO="noetic"
-FROM osrf/ros:noetic-desktop-full AS upstream
+ARG ROS_DISTRO="iron"
+FROM osrf/ros:iron-desktop-full AS upstream
 # Restate for later use
 ARG ROS_DISTRO
 ARG REPO
@@ -18,7 +18,6 @@ RUN apt-get update \
         git \
         lld \
         llvm \
-        python3-catkin-tools \
         python3-colcon-mixin \
         python3-colcon-common-extensions \
         python3-colcon-lcov-result \
