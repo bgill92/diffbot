@@ -1,0 +1,6 @@
+[submodule "dependencies/remo_description"]
+	path = dependencies/remo_description
+	url = git@github.com:bgill92/remo_description.git
+[submodule "dependencies/rplidar_ros"]
+	path = dependencies/rplidar_ros
+	url = git@github.com:Slamtec/rplidar_ros.git
