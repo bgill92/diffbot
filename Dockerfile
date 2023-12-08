@@ -16,8 +16,10 @@ RUN apt-get update \
         clang \
         cmake \
         git \
+        gnupg \
         lld \
         llvm \
+        lsb-release \
         python3-colcon-mixin \
         python3-colcon-common-extensions \
         python3-colcon-lcov-result \
@@ -29,6 +31,11 @@ RUN apt-get update \
         wget \
     && rm -rf /var/lib/apt/lists/*
 
+# install Gazebo
+RUN wget https://packages.osrfoundation.org/gazebo.gpg -O /usr/share/keyrings/pkgs-osrf-archive-keyring.gpg \
+    && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/pkgs-osrf-archive-keyring.gpg] http://packages.osrfoundation.org/gazebo/ubuntu-stable $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/gazebo-stable.list > /dev/null \
+    && sudo apt-get update \
+    && sudo apt-get install -q -y --no-install-recommends gz-harmonic
 
 # copy source to install repo dependencies
 WORKDIR /ws

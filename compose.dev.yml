@@ -15,7 +15,7 @@ services:
                       colcon mixin add default https://raw.githubusercontent.com/colcon/colcon-mixin-repository/master/index.yaml &&
                       colcon mixin update &&
                       export PATH="/usr/lib/ccache:$PATH" &&
-                      source /opt/ros/noetic/setup.bash &&
+                      source /opt/ros/iron/setup.bash &&
                       sudo chown -R ${GID}:${UID} src &&
                       bash"
     container_name: ${USER}-${REPO}-dev-iron
