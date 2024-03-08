@@ -1,6 +1,8 @@
 # syntax=docker/dockerfile:1
 ARG ROS_DISTRO="noetic"
-FROM osrf/ros:noetic-desktop-full AS upstream
+ARG ARCH
+# For building on the Raspberry Pi, ARCH should be set to arm64v8
+FROM ${ARCH}ros:noetic-ros-base AS upstream
 # Restate for later use
 ARG ROS_DISTRO
 ARG REPO
@@ -29,7 +31,6 @@ RUN apt-get update \
         python3-vcstool \
         wget \
     && rm -rf /var/lib/apt/lists/*
-
 
 # copy source to install repo dependencies
 WORKDIR /ws

@@ -9,6 +9,7 @@ services:
         USER: ${USER}
         REPO: ${REPO}
         WS: ${WS}
+        ARCH: ""
       context: .
       dockerfile: Dockerfile
     command: bash -c "source /usr/share/colcon_argcomplete/hook/colcon-argcomplete.bash &&
